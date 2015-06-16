@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>cn.cmvideo</groupId>
+	<artifactId>aspirin</artifactId>
+	<version>0.1</version>
+	<packaging>pom</packaging>
+	<modules>
+		<!--
+		<module>./fw</module>
+		<module>./admin</module>
+		<module>./account</module>
+		<module>./backend</module>
+		-->
+    	<module>common-conf</module>
+   		<module>common-base</module>
+    	<module>common-schedule</module>
+  	</modules>
+	<url>http://maven.apache.org</url>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.2.3.RELEASE</version>
+	</parent>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+		<jodatime.version>2.7</jodatime.version>
+		<guava.version>18.0</guava.version>
+		<curator.version>2.7.1</curator.version>
+		<curator-recipes.version>2.7.1</curator-recipes.version>
+		<fastjson.version>1.1.15</fastjson.version>
+		<quartz.version>2.2.1</quartz.version>
+		<log4j2.version>2.2</log4j2.version>
+	</properties>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- 时间相关工具包 -->
+			<dependency>
+				<groupId>joda-time</groupId>
+				<artifactId>joda-time</artifactId>
+				<version>${jodatime.version}</version>
+			</dependency>
+			<!--google guava工具包-->
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>
+			<!--zookeeper客户端curator-->
+			<dependency>
+				<groupId>org.apache.curator</groupId>
+				<artifactId>curator-framework</artifactId>
+				<version>${curator.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.curator</groupId>
+				<artifactId>curator-recipes</artifactId>
+				<version>${curator-recipes.version}</version>
+			</dependency>
+
+			<!--fasejson package-->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.quartz-scheduler</groupId>
+				<artifactId>quartz</artifactId>
+				<version>${quartz.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.quartz-scheduler</groupId>
+				<artifactId>quartz-jobs</artifactId>
+				<version>${quartz.version}</version>
+			</dependency>
+
+			<dependency>
+			    <groupId>org.apache.logging.log4j</groupId>
+			    <artifactId>log4j-api</artifactId>
+			    <version>${log4j2.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${log4j2.version}</version>
+			</dependency>
+			
+		</dependencies>
+	</dependencyManagement>
+
+</project>
